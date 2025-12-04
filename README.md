@@ -9,7 +9,11 @@ Linguagens e Tecnologia pré definidas: htmal, css, python, javascript, php e sq
 Tarefas para próxima semana:
 
 Mateus Viegas - Criar o repositorio no git 
+
 Estevão Amorim - Pesquisar sobre o uso do react
+
 Marcelo Alves - Analisar as melhores tecnologias BackEnd para o projeto 
+
 Rafaella Bonella - Analisar as melhores tecnologias FrontEnd para o projeto
+
 Gabriel Amorim - Esboçar identidade visual
