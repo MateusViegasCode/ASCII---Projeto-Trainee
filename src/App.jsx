@@ -20,9 +20,7 @@ function App() {
     try {
       const resposta = await fetch('http://localhost:3000/cadastro', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ nome, email, senha })
       });
 
@@ -42,12 +40,11 @@ function App() {
   };
 
   return (
-    <>
+    <div>
+      {/* Header */}
       <header className="main-header">
         <div className="container header-content">
-          <div className="logo" onClick={() => setPaginaAtual('home')} style={{cursor: 'pointer'}}>
-            CraftCode
-          </div>
+          <div className="logo">CraftCode</div>
           <nav>
             <ul className="nav-links">
               <li><a href="#">Cursos</a></li>
@@ -63,81 +60,111 @@ function App() {
         </div>
       </header>
 
-      <main>
-        <section className="hero">
-          <div className="container">
-            <h1>Domine a arte do código</h1>
-            <p>Aprenda programação com projetos práticos e evolua a sua carreira tech.</p>
-            <a href="#cadastro" className="btn-primary">Começar Agora</a>
+      {/* Hero */}
+      <section className="hero">
+        <div className="container">
+          <h1>Domine a arte do código</h1>
+          <p>Aprenda programação com projetos práticos e evolua sua carreira tech.</p>
+          <a href="#cadastro" className="btn-primary">Começar Agora</a>
+        </div>
+      </section>
+
+      {/* Cards */}
+      <section className="courses-section">
+        <div className="container">
+          <h2>Cursos Populares</h2>
+          <div className="course-grid">
+            <article className="course-card">
+              <div className="card-content">
+                <h3>Lógica de Programação</h3>
+                <p>Fundamentos essenciais.</p>
+              </div>
+            </article>
           </div>
-        </section>
-        
-        <section className="courses-section">
-            <div className="container">
-                <h2>Cursos Populares</h2>
-                <div className="course-grid">
-                    <div className="course-card">
+        </div>
+      </section>
+
+      <section class="courses-section">
+        <div class="container">
+            <h2>Cursos Populares</h2>
+            <div class="course-grid">
+                <article class="course-card">
+                    <div class="card-image"></div> <div class="card-content">
                         <h3>Lógica de Programação</h3>
                         <p>Fundamentos essenciais para iniciantes.</p>
+                        <a href="#" class="link-details">Ver detalhes &rarr;</a>
                     </div>
-                    <div className="course-card">
+                </article>
+
+                <article class="course-card">
+                    <div class="card-image"></div>
+                    <div class="card-content">
                         <h3>Frontend Moderno</h3>
-                        <p>HTML, CSS e JS avançado.</p>
+                        <p>HTML, CSS e JavaScript avançado.</p>
+                        <a href="#" class="link-details">Ver detalhes &rarr;</a>
                     </div>
-                </div>
+                </article>
+
+                <article class="course-card">
+                    <div class="card-image"></div>
+                    <div class="card-content">
+                        <h3>Backend com Node.js</h3>
+                        <p>Construa APIs robustas e escaláveis.</p>
+                        <a href="#" class="link-details">Ver detalhes &rarr;</a>
+                    </div>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="cadastro" className="cadastro-section">
-          <div className="container">
-            <h2>Crie a sua conta</h2>
-            <p>Junte-se ao CraftCode e comece a construir o seu futuro.</p>
-            
-            <form onSubmit={handleSubmit} className="form-cadastro">
-              <div className="input-group">
-                <label>Nome:</label>
-                <input 
-                  type="text" 
-                  value={nome} 
-                  onChange={(e) => setNome(e.target.value)} 
-                  required 
-                />
-              </div>
+      {/* Formulário de cadastro */}
+      <section id="cadastro" className="cadastro-section">
+        <div className="container">
+          <h2>Crie a sua conta</h2>
+          <p>Junte-se ao CraftCode e comece a construir o seu futuro.</p>
 
-              <div className="input-group">
-                <label>E-mail:</label>
-                <input 
-                  type="email" 
-                  value={email} 
-                  onChange={(e) => setEmail(e.target.value)} 
-                  required 
-                />
-              </div>
+          <form onSubmit={handleSubmit} className="form-cadastro">
+            <div className="input-group">
+              <label>Nome:</label>
+              <input
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e.target.value)}
+                required
+              />
+            </div>
+            <div className="input-group">
+              <label>E-mail:</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="input-group">
+              <label>Palavra-passe:</label>
+              <input
+                type="password"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+                required
+              />
+            </div>
+            <button type="submit" className="btn-primary">Registar</button>
+          </form>
 
-              <div className="input-group">
-                <label>Palavra-passe:</label>
-                <input 
-                  type="password" 
-                  value={senha} 
-                  onChange={(e) => setSenha(e.target.value)} 
-                  required 
-                />
-              </div>
+          {mensagem && <p className="mensagem-aviso">{mensagem}</p>}
+        </div>
+      </section>
 
-              <button type="submit" className="btn-primary">Registar</button>
-            </form>
-
-            {mensagem && <p className="mensagem-aviso">{mensagem}</p>}
-          </div>
-        </section>
-      </main>
-
+      {/* Footer */}
       <footer>
         <div className="container">
           <p>&copy; 2026 CraftCode. Todos os direitos reservados.</p>
         </div>
       </footer>
-    </>
+    </div>
   );
 }
 

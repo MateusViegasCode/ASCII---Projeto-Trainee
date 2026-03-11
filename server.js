@@ -81,7 +81,7 @@ app.post('/login', async (req, res) => {
     }
 });
 
-// Rota extra para ver o resultado
+// Rota extra para ver o resultado: http://localhost:3000/usuarios
 app.get('/usuarios', (req, res) => {
     res.json(bancoDeUsuarios);
 });

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 function Login({ voltar }) {
-  // ✅ Estados para guardar os dados do formulário
+  // Estados para guardar os dados do formulário
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [mensagem, setMensagem] = useState('');
 
-  // ✅ Função que chama o backend em /login
+  // Função que chama o backend em /login
   const handleSubmit = async (evento) => {
     evento.preventDefault();
     try {
@@ -43,7 +43,7 @@ function Login({ voltar }) {
           <h2>Entrar no CraftCode</h2>
           <p>Acesse sua conta para continuar evoluindo.</p>
           
-          {/* ✅ onSubmit conectado ao handleSubmit */}
+          {/* onSubmit conectado ao handleSubmit */}
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <input 
@@ -70,7 +70,7 @@ function Login({ voltar }) {
             </button>
           </form>
 
-          {/* ✅ Exibe mensagem de sucesso ou erro */}
+          {/* Exibe mensagem de sucesso ou erro */}
           {mensagem && <p className="mensagem-aviso">{mensagem}</p>}
           
           <p className="signup-text">
