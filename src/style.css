@@ -63,24 +63,194 @@ a {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 15px; /* Ajustado levemente para acomodar as bordas de todos os itens */
     align-items: center;
 }
 
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-.btn-login {
+/* --- Unificando TODOS os links e o botão no mesmo padrão laranja --- */
+.nav-links a,
+.btn-entrar-header {
+    background: transparent;
     border: 1px solid var(--primary-color);
     padding: 8px 20px;
     border-radius: 5px;
+    color: var(--primary-color) !important; /* !important garante o tom exato, ignorando estilos padrão do navegador */
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: inherit;
+    transition: 0.3s;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.nav-links a:hover,
+.btn-entrar-header:hover {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+}
+/* ------------------------------------------------------------------ */
+
+/* Secao de Cadastro */
+.cadastro-section {
+    padding: 80px 0;
+    background-color: var(--bg-card);
+    border-top: 1px solid #333;
+}
+
+.cadastro-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.cadastro-section p {
+    color: var(--text-gray);
+    margin-bottom: 40px;
+}
+
+.form-cadastro {
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.input-group input {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.mensagem-aviso {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    font-size: 0.95rem;
+}
+
+/* Página de Login Unificada */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-dark);
+}
+
+.login-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 480px;
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.btn-back {
+    background: transparent;
+    border: none;
+    color: var(--text-gray);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-family: inherit;
+    padding: 0;
+    margin-bottom: 32px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-back:hover {
     color: var(--primary-color);
 }
 
-.btn-login:hover {
-    background-color: var(--primary-color);
-    color: white;
+.login-container h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.login-container > p {
+    color: var(--text-gray);
+    margin-bottom: 36px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-craftcode {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-craftcode:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn-submit {
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.signup-text {
+    text-align: center;
+    margin-top: 24px;
+    color: var(--text-gray);
+    font-size: 0.95rem;
 }
 
 /* Hero Section */
@@ -153,7 +323,7 @@ a {
 
 .card-image {
     height: 180px;
-    background-color: #333; /* Placeholder cinza */
+    background-color: #333;
     width: 100%;
 }
 
@@ -184,4 +354,17 @@ footer {
     border-top: 1px solid #333;
     margin-top: 60px;
     color: var(--text-gray);
+}
+
+/* Nova classe para os links clicáveis (Cadastre-se / Faça Login) */
+.link-acao {
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.link-acao:hover {
+    text-decoration: underline;
+    color: var(--primary-hover);
 }
