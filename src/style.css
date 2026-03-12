@@ -1,370 +1,156 @@
-:root {
-    /* Paleta de Cores */
-    --primary-color: #FF8C00; /* Laranja forte */
-    --primary-hover: #e07b00;
-    --bg-dark: #121212;       /* Fundo quase preto */
-    --bg-card: #1E1E1E;       /* Fundo dos cards */
-    --text-light: #F5F5F5;
-    --text-gray: #A0A0A0;
-    
-    /* Espaçamento */
-    --container-width: 1200px;
-    --spacing-md: 1.5rem;
+
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-    line-height: 1.6;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+main {
+  flex: 1;
 }
 
 .container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: 0.3s;
-}
-
-/* Header */
 .main-header {
-    background-color: rgba(18, 18, 18, 0.95);
-    padding: 20px 0;
-    border-bottom: 1px solid #333;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 0;
 }
 
 .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: -0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px; /* Ajustado levemente para acomodar as bordas de todos os itens */
-    align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
-/* --- Unificando TODOS os links e o botão no mesmo padrão laranja --- */
-.nav-links a,
+.nav-links a, 
 .btn-entrar-header {
-    background: transparent;
-    border: 1px solid var(--primary-color);
-    padding: 8px 20px;
-    border-radius: 5px;
-    color: var(--primary-color) !important; /* !important garante o tom exato, ignorando estilos padrão do navegador */
-    font-size: 1rem;
-    font-weight: 500;
-    font-family: inherit;
-    transition: 0.3s;
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: 0.3s;
+  display: inline-block;
 }
 
-.nav-links a:hover,
+.nav-links a:hover, 
 .btn-entrar-header:hover {
-    background-color: var(--primary-color);
-    color: #ffffff !important;
-}
-/* ------------------------------------------------------------------ */
-
-/* Secao de Cadastro */
-.cadastro-section {
-    padding: 80px 0;
-    background-color: var(--bg-card);
-    border-top: 1px solid #333;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-.cadastro-section h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.cadastro-section p {
-    color: var(--text-gray);
-    margin-bottom: 40px;
-}
-
-.form-cadastro {
-    max-width: 480px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.input-group label {
-    font-size: 0.9rem;
-    color: var(--text-gray);
-}
-
-.input-group input {
-    background-color: #2a2a2a;
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 12px 16px;
-    color: var(--text-light);
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.3s;
-}
-
-.input-group input:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.mensagem-aviso {
-    margin-top: 16px;
-    padding: 12px 16px;
-    border-radius: 8px;
-    background-color: #2a2a2a;
-    border: 1px solid #444;
-    font-size: 0.95rem;
-}
-
-/* Página de Login Unificada */
-.login-page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg-dark);
-}
-
-.login-section {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-}
-
-.login-container {
-    width: 100%;
-    max-width: 480px;
-    background-color: var(--bg-card);
-    padding: 40px;
-    border-radius: 12px;
-    border: 1px solid #333;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.btn-back {
-    background: transparent;
-    border: none;
-    color: var(--text-gray);
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-family: inherit;
-    padding: 0;
-    margin-bottom: 32px;
-    transition: color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.btn-back:hover {
-    color: var(--primary-color);
-}
-
-.login-container h2 {
-    font-size: 2rem;
-    margin-bottom: 8px;
-}
-
-.login-container > p {
-    color: var(--text-gray);
-    margin-bottom: 36px;
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.input-craftcode {
-    background-color: #2a2a2a;
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 14px 16px;
-    color: var(--text-light);
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.3s;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.input-craftcode:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.btn-submit {
-    margin-top: 8px;
-    width: 100%;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    font-family: inherit;
-}
-
-.signup-text {
-    text-align: center;
-    margin-top: 24px;
-    color: var(--text-gray);
-    font-size: 0.95rem;
-}
-
-/* Hero Section */
 .hero {
-    padding: 80px 0;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #fff, #ccc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: var(--text-gray);
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  padding: 60px 0;
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px 40px;
-    border-radius: 8px;
-    font-weight: 600;
-    display: inline-block;
+  display: inline-block;
+  background-color: #ffae00;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
 }
 
-.btn-primary:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-2px);
-}
-
-/* Cursos Grid */
 .courses-section {
-    padding: 60px 0;
-}
-
-.courses-section h2 {
-    margin-bottom: 40px;
-    font-size: 2rem;
-    border-left: 4px solid var(--primary-color);
-    padding-left: 15px;
+  padding: 40px 0;
 }
 
 .course-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .course-card {
-    background-color: var(--bg-card);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    border: 1px solid #333;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.course-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
+.login-page {
+  background-color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.card-image {
-    height: 180px;
-    background-color: #333;
-    width: 100%;
+.login-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
 }
 
-.card-content {
-    padding: 20px;
+.input-craftcode {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+  transition: 0.2s;
 }
 
-.card-content h3 {
-    margin-bottom: 10px;
+.input-craftcode:hover, 
+.input-craftcode:focus {
+  outline: none;
+  border-color: #ffae00;
 }
 
-.card-content p {
-    color: var(--text-gray);
-    font-size: 0.9rem;
-    margin-bottom: 20px;
+.btn-submit-login {
+  width: 100%;
+  margin-top: 10px;
 }
 
-.link-details {
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 0.9rem;
+.btn-back {
+  background: none;
+  border: none;
+  color: #ffae00;
+  cursor: pointer;
+  margin-bottom: 15px;
 }
 
-/* Footer */
 footer {
-    padding: 40px 0;
-    text-align: center;
-    border-top: 1px solid #333;
-    margin-top: 60px;
-    color: var(--text-gray);
-}
-
-/* Nova classe para os links clicáveis (Cadastre-se / Faça Login) */
-.link-acao {
-    color: var(--primary-color);
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.link-acao:hover {
-    text-decoration: underline;
-    color: var(--primary-hover);
+  background-color: #2c3e50;
+  color: white;
+  padding: 1.5rem 0;
+  text-align: center;
+  width: 100%;
 }
