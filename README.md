@@ -1,19 +1,39 @@
 # ASCII---Projeto-Trainee
 
-Ideia de Projeto: Plataforma de Cursos de Tecnologia
 
-Inicialmente pensando em criar uma plataforma de cursos tech. Definimos as linguagens de preferencia e dividimos subtarefas para serem executadas ao longo da primeira semana.
+## Implementacao recente
 
-Linguagens e Tecnologia pré definidas: htmal, css, python, javascript, php e sql
+O backend agora grava usuarios em SQLite usando Prisma. As rotas /cadastro, /login e /usuarios usam Prisma para acessar o banco local.
 
-Tarefas para próxima semana:
+## Passo a passo para executar o projeto
 
-Mateus Viegas - Criar o repositorio no git 
+1) Instale as dependencias do projeto:
 
-Estevão Amorim - Pesquisar sobre o uso do react
+```bash
+npm install
+```
 
-Marcelo Alves - Analisar as melhores tecnologias BackEnd para o projeto 
+2) Inicie o banco SQLite e gere o client do Prisma:
 
-Rafaella Bonella - Analisar as melhores tecnologias FrontEnd para o projeto
+```bash
+npx prisma db push
+```
 
-Gabriel Amorim - Esboçar identidade visual
+Isso cria o arquivo prisma/dev.db com as tabelas.
+A conexao fica definida em .env, usando DATABASE_URL.
+
+3) Inicie o backend em um terminal:
+
+```bash
+node server.js
+```
+
+O servidor sobe em http://localhost:3000
+
+4) Inicie o frontend em outro terminal:
+
+```bash
+npm run dev
+```
+
+O Vite sobe em http://localhost:5173
