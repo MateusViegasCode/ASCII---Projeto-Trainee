@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Login from './Login.jsx';
+import Sobre from './Sobre.jsx';
 
 function App() {
   const [paginaAtual, setPaginaAtual] = useState('home');
