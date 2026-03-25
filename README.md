@@ -1,11 +1,21 @@
-# ASCII---Projeto-Trainee
+# CraftCode | ASCII - Projeto Trainee
 
+## 📖 Sobre o Projeto
 
-## Implementacao recente
+O CraftCode nasceu como um grande desafio do Projeto Trainee da ASCII. A nossa ideia central é construir uma plataforma moderna, robusta e intuitiva focada em cursos de programação. O objetivo desta jornada é conectar o conhecimento teórico com a prática real de mercado, criando não apenas uma interface agradável, mas uma arquitetura funcional de ponta a ponta.
 
-O backend agora grava usuarios em SQLite usando Prisma. As rotas /cadastro, /login e /usuarios usam Prisma para acessar o banco local.
+O projeto evoluiu rapidamente de um conceito visual para uma aplicação *fullstack* completa. A implementacao recente garantiu que o backend agora grava usuarios em SQLite usando Prisma. As rotas `/cadastro`, `/login` e `/usuarios` usam Prisma para acessar o banco local, garantindo segurança (com encriptação de senhas) e eficiência no gerenciamento de dados.
 
-## Passo a passo para executar o projeto
+## 🚀 Tecnologias Utilizadas
+
+* **Frontend:** React, Vite
+* **Backend:** Node.js, Express
+* **Banco de Dados & ORM:** SQLite, Prisma
+* **Segurança:** bcrypt
+
+---
+
+## ⚙️ Passo a passo para executar o projeto
 
 1) Instale as dependencias do projeto:
 
