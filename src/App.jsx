@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Login from './Login.jsx';
+import logoCraftCode from './assets/logo-craftcode.jpg';
 
 function App() {
   const [paginaAtual, setPaginaAtual] = useState('home');
@@ -13,8 +14,8 @@ function App() {
 
   if (paginaAtual === 'login') {
     return (
-      <Login 
-        voltar={() => setPaginaAtual('home')} 
+      <Login
+        voltar={() => setPaginaAtual('home')}
         // Esta função recebe os dados do Login.jsx e guarda no App.jsx
         aoLogarSucesso={(dadosDoUsuario) => {
           setUsuarioLogado(dadosDoUsuario);
@@ -28,13 +29,15 @@ function App() {
     <div>
       <header className="main-header">
         <div className="container header-content">
-          <div className="logo">CraftCode</div>
+          <a href="#" className="logo" onClick={(e) => { e.preventDefault(); setPaginaAtual('home'); }}>
+            <img src={logoCraftCode} alt="Logo CraftCode" />
+          </a>
           <nav>
             <ul className="nav-links">
               <li><a href="#">Cursos</a></li>
               <li><a href="#">Trilhas</a></li>
               <li><a href="#">Sobre</a></li>
-              
+
               {/* Renderização Condicional: Muda o que aparece no cabeçalho */}
               <li>
                 {usuarioLogado ? (
@@ -64,12 +67,12 @@ function App() {
         <div className="container">
           <h1>Domine a arte do código</h1>
           <p>Aprenda programação com projetos práticos e evolua sua carreira tech.</p>
-          
+
           {/* Se o utilizador já estiver logado, podemos mudar o texto do botão principal também */}
           {usuarioLogado ? (
-             <button className="btn-primary" style={{ border: 'none', cursor: 'pointer', fontSize: '1rem' }}>
-               Ver meus cursos
-             </button>
+            <button className="btn-primary" style={{ border: 'none', cursor: 'pointer', fontSize: '1rem' }}>
+              Ver meus cursos
+            </button>
           ) : (
             <button onClick={() => setPaginaAtual('login')} className="btn-primary" style={{ border: 'none', cursor: 'pointer', fontSize: '1rem' }}>
               Começar Agora
@@ -80,35 +83,35 @@ function App() {
 
       <section className="courses-section">
         <div className="container">
-            <h2>Cursos Populares</h2>
-            <div className="course-grid">
-                <article className="course-card">
-                    <div className="card-image"></div>
-                    <div className="card-content">
-                        <h3>Lógica de Programação</h3>
-                        <p>Fundamentos essenciais para iniciantes.</p>
-                        <a href="#" className="link-details">Ver detalhes &rarr;</a>
-                    </div>
-                </article>
+          <h2>Cursos Populares</h2>
+          <div className="course-grid">
+            <article className="course-card">
+              <div className="card-image"></div>
+              <div className="card-content">
+                <h3>Lógica de Programação</h3>
+                <p>Fundamentos essenciais para iniciantes.</p>
+                <a href="#" className="link-details">Ver detalhes &rarr;</a>
+              </div>
+            </article>
 
-                <article className="course-card">
-                    <div className="card-image"></div>
-                    <div className="card-content">
-                        <h3>Frontend Moderno</h3>
-                        <p>HTML, CSS e JavaScript avançado.</p>
-                        <a href="#" className="link-details">Ver detalhes &rarr;</a>
-                    </div>
-                </article>
+            <article className="course-card">
+              <div className="card-image"></div>
+              <div className="card-content">
+                <h3>Frontend Moderno</h3>
+                <p>HTML, CSS e JavaScript avançado.</p>
+                <a href="#" className="link-details">Ver detalhes &rarr;</a>
+              </div>
+            </article>
 
-                <article className="course-card">
-                    <div className="card-image"></div>
-                    <div className="card-content">
-                        <h3>Backend com Node.js</h3>
-                        <p>Construa APIs robustas e escaláveis.</p>
-                        <a href="#" className="link-details">Ver detalhes &rarr;</a>
-                    </div>
-                </article>
-            </div>
+            <article className="course-card">
+              <div className="card-image"></div>
+              <div className="card-content">
+                <h3>Backend com Node.js</h3>
+                <p>Construa APIs robustas e escaláveis.</p>
+                <a href="#" className="link-details">Ver detalhes &rarr;</a>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
