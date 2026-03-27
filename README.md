@@ -1,19 +1,49 @@
-# ASCII---Projeto-Trainee
+# CraftCode | ASCII - Projeto Trainee
 
-Ideia de Projeto: Plataforma de Cursos de Tecnologia
+## 📖 Sobre o Projeto
 
-Inicialmente pensando em criar uma plataforma de cursos tech. Definimos as linguagens de preferencia e dividimos subtarefas para serem executadas ao longo da primeira semana.
+O CraftCode nasceu como um grande desafio do Projeto Trainee da ASCII. A nossa ideia central é construir uma plataforma moderna, robusta e intuitiva focada em cursos de programação. O objetivo desta jornada é conectar o conhecimento teórico com a prática real de mercado, criando não apenas uma interface agradável, mas uma arquitetura funcional de ponta a ponta.
 
-Linguagens e Tecnologia pré definidas: htmal, css, python, javascript, php e sql
+O projeto evoluiu rapidamente de um conceito visual para uma aplicação *fullstack* completa. A implementacao recente garantiu que o backend agora grava usuarios em SQLite usando Prisma. As rotas `/cadastro`, `/login` e `/usuarios` usam Prisma para acessar o banco local, garantindo segurança (com encriptação de senhas) e eficiência no gerenciamento de dados.
 
-Tarefas para próxima semana:
+## 🚀 Tecnologias Utilizadas
 
-Mateus Viegas - Criar o repositorio no git 
+* **Frontend:** React, Vite
+* **Backend:** Node.js, Express
+* **Banco de Dados & ORM:** SQLite, Prisma
+* **Segurança:** bcrypt
 
-Estevão Amorim - Pesquisar sobre o uso do react
+---
 
-Marcelo Alves - Analisar as melhores tecnologias BackEnd para o projeto 
+## ⚙️ Passo a passo para executar o projeto
 
-Rafaella Bonella - Analisar as melhores tecnologias FrontEnd para o projeto
+1) Instale as dependencias do projeto:
 
-Gabriel Amorim - Esboçar identidade visual
+```bash
+npm install
+```
+
+2) Inicie o banco SQLite e gere o client do Prisma:
+
+```bash
+npx prisma db push
+```
+
+Isso cria o arquivo prisma/dev.db com as tabelas.
+A conexao fica definida em .env, usando DATABASE_URL.
+
+3) Inicie o backend em um terminal:
+
+```bash
+node server.js
+```
+
+O servidor sobe em http://localhost:3000
+
+4) Inicie o frontend em outro terminal:
+
+```bash
+npm run dev
+```
+
+O Vite sobe em http://localhost:5173
