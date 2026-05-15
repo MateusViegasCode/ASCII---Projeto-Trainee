@@ -1,12 +1,15 @@
 :root {
     /* Paleta de Cores */
-    --primary-color: #FF8C00; /* Laranja forte */
+    --primary-color: #FF8C00;
+    /* Laranja forte */
     --primary-hover: #e07b00;
-    --bg-dark: #121212;       /* Fundo quase preto */
-    --bg-card: #1E1E1E;       /* Fundo dos cards */
+    --bg-dark: #121212;
+    /* Fundo quase preto */
+    --bg-card: #1E1E1E;
+    /* Fundo dos cards */
     --text-light: #F5F5F5;
     --text-gray: #A0A0A0;
-    
+
     /* Espaçamento */
     --container-width: 1200px;
     --spacing-md: 1.5rem;
@@ -54,16 +57,29 @@ a {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 50px;
+    /* Ajuste esse valor para deixar o logo maior ou menor */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+    /* Dá um leve efeito de zoom ao passar o mouse */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px; /* Ajustado levemente para acomodar as bordas de todos os itens */
+    gap: 15px;
+    /* Ajustado levemente para acomodar as bordas de todos os itens */
     align-items: center;
 }
 
@@ -74,7 +90,8 @@ a {
     border: 1px solid var(--primary-color);
     padding: 8px 20px;
     border-radius: 5px;
-    color: var(--primary-color) !important; /* !important garante o tom exato, ignorando estilos padrão do navegador */
+    color: var(--primary-color) !important;
+    /* !important garante o tom exato, ignorando estilos padrão do navegador */
     font-size: 1rem;
     font-weight: 500;
     font-family: inherit;
@@ -89,6 +106,7 @@ a {
     background-color: var(--primary-color);
     color: #ffffff !important;
 }
+
 /* ------------------------------------------------------------------ */
 
 /* Secao de Cadastro */
@@ -174,7 +192,7 @@ a {
     padding: 40px;
     border-radius: 12px;
     border: 1px solid #333;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .btn-back {
@@ -201,7 +219,7 @@ a {
     margin-bottom: 8px;
 }
 
-.login-container > p {
+.login-container>p {
     color: var(--text-gray);
     margin-bottom: 36px;
 }
